@@ -1,0 +1,53 @@
+accelerator: 'gpu'
+random_seed: 0
+wandb.use: True
+
+csv: '/home/shenm19/prj/evfi-manuscript/datasets/filtzero_without_lastround/tead3_filt1consec_present2ndtolast.csv'
+genotype_col: 'Genotype'
+round_cols: [0,1,2,3,4,5,6]
+project_output_folder: '/home/shenm19/prj/evfi-manuscript/run-benchmarks/gt/filtzero_without_lastround/out/TEAD-1fc-p2tl/deep_latent/'
+tsngs.skip_filters: True
+
+# 'train_only' or 'train_and_eval'
+stages: 'train_and_eval'
+test_split_by_round: True
+train_round_idxs: [0,1,2,3,4]
+test_round_idxs: [5]
+test_split_by_genotype: False
+
+ft.dataflow: 'smiles_to_fingerprint'
+ft.mfp_nbits: 128
+use_feature_store: True
+
+net.network: 'mlp'
+net.mlp_inp_dim: 128
+net.mlp_hidden_dim: 128
+net.mlp_n_layers: 2
+net.mlp_dropout: 0.0
+net.mlp_batch_norm: True
+
+dataloader_num_workers: 0
+dataloader_persistent_workers: False
+
+regularize_logw_weight: 0.0
+warmup.weight_decay: 0.0
+weight_decay: 0.0
+
+
+simple.epochs: 10000
+simple.lr: 0.1
+
+warmup.batch_size: 1024
+warmup.epochs: 300
+warmup.val_every_n_epochs: 10
+
+loss_func: 'multinomial'
+e2e.val_every_n_epochs: 10
+epochs: 1500
+skip_autobatch: True
+e2e.batch_size: 65536
+lr: 1.0e-3
+e2e.accumulate_grad: False
+accumulate_v2: True
+reducelronplateau.patience: 100
+e2e.convergence.patience: 100

@@ -1,0 +1,56 @@
+accelerator: 'gpu'
+random_seed: 0
+filter_max_readcount_threshold: 0
+filter_max_frequency_threshold: 0.0
+
+wandb.use: True
+
+csv: '/home/shenm19/prj/evfi-manuscript/datasets/filtzero_without_lastround/Data-D.csv'
+genotype_col: 'Genotype'
+round_cols: [Initial_1,r1_1,r2_1,r3_1]
+project_output_folder: '/home/shenm19/prj/evfi-manuscript/run-benchmarks/gt/filtzero_without_lastround/out/D/deep_latent/'
+tsngs.skip_filters: True
+
+loss_func: 'dirichlet_multinomial'
+
+# 'train_only' or 'train_and_eval'
+stages: 'train_and_eval'
+test_split_by_round: True
+train_round_idxs: [0,1]
+test_round_idxs: [2]
+test_split_by_genotype: False
+
+ft.dataflow: 'string_to_onehot'
+ft.alphabet: 'amino acids'
+ft.onehot_len: 34
+use_feature_store: False
+
+net.network: 'mlp'
+net.mlp_inp_dim: 714
+net.mlp_hidden_dim: 256
+net.mlp_n_layers: 2
+net.mlp_dropout: 0.2
+net.mlp_batch_norm: True
+
+dataloader_num_workers: 0
+dataloader_persistent_workers: False
+
+simple.loss_func: 'dirichlet_multinomial'
+simple.epochs: 10000
+simple.lr: 0.1
+
+warmup.val_every_n_epochs: 10
+warmup.epochs: 150
+warmup.convergence.patience: 30
+warmup.weight_decay: 1.0e-4
+warmup.lr: 1.0e-4
+
+epochs: 100
+e2e.val_every_n_epochs: 10
+skip_autobatch: True
+e2e.batch_size: 16384
+e2e.accumulate_grad: True
+e2e.convergence.patience: 20
+lr: 1.0e-4
+weight_decay: 1.0e-4
+regularize_logw_weight: 0.0

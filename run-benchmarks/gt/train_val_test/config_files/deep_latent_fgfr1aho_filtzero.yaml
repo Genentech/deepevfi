@@ -1,0 +1,56 @@
+accelerator: 'gpu'
+random_seed: 0
+
+wandb.use: True
+
+csv: '/home/shenm19/prj/evfi-manuscript/datasets/filtzero_without_2ndtolastround/fgfr1_AHOent0.25.csv'
+genotype_col: 'Genotype'
+round_cols: [0,1,2,3,4]
+project_output_folder: '/home/shenm19/prj/evfi-manuscript/run-benchmarks/gt/filtzero_without_lastround/out/FGFR1-AHOent0.25/deep_latent/'
+tsngs.skip_filters: False
+
+# simple.loss_func: 'multinomial'
+loss_func: 'multinomial'
+tasks.multinomial.validate_args: False
+
+# 'train_only' or 'train_and_eval'
+stages: 'train_and_eval'
+test_split_by_round: True
+train_round_idxs: [0,1]
+val_round_idxs: [2]
+test_round_idxs: [3]
+test_split_by_genotype: False
+
+ft.dataflow: 'string_to_onehot'
+ft.alphabet: 'amino acids'
+ft.onehot_len: 55
+use_feature_store: False
+
+net.network: 'mlp'
+net.mlp_inp_dim: 1155
+net.mlp_hidden_dim: 256
+net.mlp_n_layers: 2
+net.mlp_dropout: 0.0
+net.mlp_batch_norm: True
+
+dataloader_num_workers: 0
+dataloader_persistent_workers: False
+
+simple.epochs: 10000
+simple.lr: 0.1
+
+warmup.disable: True
+warmup.weight_decay: 0.0
+warmup.val_every_n_epochs: 10
+warmup.batch_size: 16384
+warmup.epochs: 1
+
+lr: 1.0e-4
+regularize_logw_weight: 0.0
+weight_decay: 0.0
+epochs: 1000
+skip_autobatch: True
+e2e.val_every_n_epochs: 10
+e2e.batch_size: 16384
+e2e.accumulate_grad: True
+e2e.convergence.patience: 100
