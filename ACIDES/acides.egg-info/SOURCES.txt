@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+acides.egg-info/PKG-INFO
+acides.egg-info/SOURCES.txt
+acides.egg-info/dependency_links.txt
+acides.egg-info/top_level.txt
