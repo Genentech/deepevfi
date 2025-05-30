@@ -1,0 +1,1 @@
+To run these notebooks, please first install the deepfitness conda environment. Instructions on how to do so are provided in the deepfitness folder's README.md
