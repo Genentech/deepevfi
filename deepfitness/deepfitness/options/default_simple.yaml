@@ -1,0 +1,19 @@
+simple.lr: 0.1
+simple.epochs: 1000
+accelerator: 'gpu'
+random_seed: 0
+
+csv: ''
+genotype_col: ''
+round_cols: ''
+output_folder: ''
+
+loss_func: 'multinomial'
+
+# 'train_only' or 'train_and_eval'
+stages: 'train_only'
+test_split_by_round: False
+train_round_idxs: [0,1,2,3,4]
+test_round_idxs: []
+test_split_by_genotype: False
+test_genotype_split_percent: 0

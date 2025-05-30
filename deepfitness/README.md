@@ -10,10 +10,6 @@ This package is intended to support manual use by a computational scientist, ser
 # Setup
 Git clone this repository. If you use a personal access token, use https; e.g.,
 
-```Shell
-git clone https://code.roche.com/shenm19/deepfitness.git
-```
-
 Install the conda environment using mamba.
 
 ```Shell
@@ -46,13 +42,32 @@ in a particular round. Fitness inference requires at least 2 timepoint rounds.
 This package does not contain any code for processing DNA sequencing files
 into count tables.
 
-# Main driver scripts
-Python scripts for command-line use are provided in `deepfitness/scripts/`. 
-As scripts import code from around the package, run them using `python -m`, as in:
+# Running inference
+
+To run EVFI (without deep learning), use:
 
 ```Shell
-python -m deepfitness.scripts.train_deepfitness --options_yaml deepfitness/options/default_deepfitness.yaml --csv example.csv
+python -m deepfitness.scripts.train_simplefitness \
+    --csv example/TEAD_subset500.csv --genotype_col HELMnolinker \
+    --round_cols [0,1,2,3,4,5,6] --output_folder example/output_evfi/
 ```
+
+To run DeepEVFI, use:
+
+```Shell
+python -m deepfitness.scripts.train_deep_latent --config <local_repo_path>/run-benchmarks/gt/filtzero_without_lastround/config_files/final_deep_latent_tead_1fc_p2tl_filtzero.yaml
+```
+
+We provide four scripts: simplefitness, simple_latent, deepfitness, and deep_latent.
+- Simple vs. deep: Whether or not deep learning is used.
+- Latent vs. not latent: Latent indicates that initial variant frequencies are also inferred alongside fitness. Not latent means that only fitness is inferred.
+
+In our experiments, we found that simplefitness, and deep_latent performed the best. These represent the methods reported in our manuscript, and the methods that we recommend for applied use. We provide the simple_latent and deepfitness scripts as research artifacts.
+
+# Scripts
+
+Python scripts for command-line use are provided in `deepfitness/scripts/`. 
+As scripts import code from around the package, run them using `python -m`.
 
 All scripts can be run with `-h` flag for a description and main configurable options, specified via CLI `--key val` format. More complex scripts can also be configured using yaml files: `--options_yaml your_args.yaml`.
 
@@ -78,19 +93,3 @@ with a wandb sweep to perform hyperparameter optimization. Individual runs can t
 - `merge_two_fitness_csvs.py`: Merges two fitness CSVs, using shared overlapping genotypes to robustly rescale one fitness scale to the other. This operation is only valid when both campaigns are against the same target, but the campaigns can have different starting libraries or codon tables. 
 - `merge_many_fitness_csvs.py`: The many version of the above. Merges a list of fitness CSVs into the smallest possible number of groups by computing pairwise structure of shared genotypes. Outputs a merged CSV for each group. 
 
-
-# Plotting library
-In `plotting/`, a simple library of plotting functions are provided for visualizing and interactively analyzing count tables and fitness inference results. These scripts are intended to be imported and run in jupyter notebooks.
-
-It is recommended to use the plotting library to understand the data before running fitness inference, and to visualize and understand the results of fitness inference.
-
-As DeepFitness is a machine learning workflow, it can fail silently in ways that are difficult to anticipate. It works best on input data that adhere to DeepFitness' basic modeling assumptions that genotype frequencies evolve over time according to each genotype's fitness value, which does not change over time. 
-Modeling assumptions empirically hold for many types of real-world directed evolution data, but it isn't guaranteed to hold on a new dataset and should be checked manually. 
-
-# Example usage
-See the `example` folder's README for a walkthrough on a toy dataset.
-
-# Advanced details for interested users
-
-## Weights & Biases (wandb) setup for deep fitness logging
-To use wandb as a logger, first ensure wandb is installed (e.g., follow the setup instructions below, first). Then, login through the wandb terminal command: `wandb login --host https://genentech.wandb.io/`. Further options to control wandb logging are provided in option yaml files.

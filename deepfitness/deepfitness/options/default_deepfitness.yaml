@@ -1,0 +1,35 @@
+lr: 1.0e-5
+epochs: 100
+accelerator: 'gpu'
+random_seed: 0
+
+csv: ''
+genotype_col: ''
+round_cols: ''
+project_output_folder: ''
+
+loss_func: 'multinomial'
+
+# 'train_only' or 'train_and_eval'
+stages: 'train_and_eval'
+test_split_by_round: False
+test_split_by_genotype: True
+train_genotype_split_percent: 0.8
+val_genotype_split_percent: 0.1
+test_genotype_split_percent: 0.1
+
+simple.lr: 0.001
+simple.epochs: 1000
+warmup.loss_func: 'multinomial'
+warmup.batch_size: 512
+warmup.lr: 0.01
+warmup.weight_decay: 0.0001
+warmup.epochs: 100
+
+ft.dataflow: 'string_to_tensor'
+ft.alphabet: 'amino acids'
+
+net.network: 'transformer'
+net.transformer_nhead: 2
+net.transformer_num_layers: 1
+net.transformer_embed_dim: 4
