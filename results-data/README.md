@@ -1,2 +1,2 @@
-results-data folder stores intermediate results datasets
-that are used for figure making, as input for figures-drafts and figures.
+This folder contains CSVs of benchmark results used in the manuscript.
+These can be reproduced by running benchmarks on ACIDES, Enrich2, and EVFI/DeepEVFI using other folders and command-generating scripts in this repo.
