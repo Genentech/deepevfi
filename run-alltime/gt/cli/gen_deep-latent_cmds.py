@@ -4,7 +4,7 @@ import yaml
 from hackerargs import args
 
 
-CONFIG_DIR = '/home/shenm19/prj/evfi-manuscript/run-alltime/gt/config/'
+CONFIG_DIR = '/evfi-manuscript-public/run-alltime/gt/config/'
 
 NUM_REPLICATES = 1
 METHOD_NAME = 'deep-latent'
