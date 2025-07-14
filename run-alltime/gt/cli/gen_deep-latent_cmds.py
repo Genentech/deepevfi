@@ -3,8 +3,8 @@ import argparse
 import yaml
 from hackerargs import args
 
-
-CONFIG_DIR = '/evfi-manuscript-public/run-alltime/gt/config/'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', 'config'))
 
 NUM_REPLICATES = 1
 METHOD_NAME = 'deep-latent'

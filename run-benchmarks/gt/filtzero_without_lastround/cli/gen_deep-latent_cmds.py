@@ -3,8 +3,8 @@ import argparse
 import yaml
 from hackerargs import args
 
-
-CONFIG_DIR = '/evfi-manuscript-public/run-benchmarks/gt/filtzero_without_lastround/config_files/'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', 'config_files'))
 
 NUM_REPLICATES = 5
 METHOD_NAME = 'deep-latent'

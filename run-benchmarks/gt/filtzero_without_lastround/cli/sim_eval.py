@@ -8,10 +8,11 @@ import pandas as pd
 from hackerargs import args
 from collections import defaultdict
 
-OUT_DIR = '/evfi-manuscript-public/run-benchmarks/gt/filtzero_without_lastround/out/'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PRJ_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..', '..'))
 
-PRJ_DIR = '/evfi-manuscript-public/'
-DATA_DIR = PRJ_DIR + 'datasets/'
+OUT_DIR = os.path.join(PRJ_DIR, 'run-benchmarks', 'gt', 'filtzero_without_lastround', 'out')
+DATA_DIR = os.path.join(PRJ_DIR, 'datasets')
 deepfitness_dir = os.path.join(PRJ_DIR, 'deepfitness')
 
 layout_df = pd.read_csv(os.path.join(DATA_DIR, 'layout.csv'))
