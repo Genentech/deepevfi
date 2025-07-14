@@ -3,10 +3,10 @@ random_seed: 0
 
 wandb.use: True
 
-csv: '/home/shenm19/prj/evfi-manuscript/datasets/filtzero_without_2ndtolastround/fgfr1_AHOent0.25.csv'
+csv: '/evfi-manuscript-public/datasets/filtzero_without_2ndtolastround/fgfr1_AHOent0.25.csv'
 genotype_col: 'Genotype'
 round_cols: [0,1,2,3,4]
-project_output_folder: '/home/shenm19/prj/evfi-manuscript/run-benchmarks/gt/filtzero_without_lastround/out/FGFR1-AHOent0.25/deep_latent/'
+project_output_folder: '/evfi-manuscript-public/run-benchmarks/gt/filtzero_without_lastround/out/FGFR1-AHOent0.25/deep_latent/'
 tsngs.skip_filters: False
 
 # simple.loss_func: 'multinomial'

@@ -8,9 +8,9 @@ import pandas as pd
 from hackerargs import args
 from collections import defaultdict
 
-OUT_DIR = '/home/shenm19/prj/evfi-manuscript/run-benchmarks/gt/filtzero_without_lastround/out/'
+OUT_DIR = '/evfi-manuscript-public/run-benchmarks/gt/filtzero_without_lastround/out/'
 
-PRJ_DIR = '/home/shenm19/prj/evfi-manuscript/'
+PRJ_DIR = '/evfi-manuscript-public/'
 DATA_DIR = PRJ_DIR + 'datasets/'
 deepfitness_dir = os.path.join(PRJ_DIR, 'deepfitness')
 

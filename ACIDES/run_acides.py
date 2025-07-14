@@ -9,7 +9,6 @@ import argparse
 
 import sys
 sys.path.append(".")
-sys.path.append("/home/shenm19/prj/df-manuscript/ACIDES/module/")
 
 from module import ACIDES_module
 from module.ACIDES_module import ACIDES
@@ -85,8 +84,8 @@ if __name__ == '__main__':
         description = """ Runs ACIDES. """
     )
     parser.add_argument('--csv',
-        # required = True,
-        default = '/home/shenm19/prj/df-manuscript/ACIDES/data/genotype_col/Data-B.csv')
+        required = False,
+        default = 'data/example_data.csv')
     parser.add_argument('--genotype_col',
         default = 'Genotype')
     parser.add_argument('--round_cols', 
@@ -104,9 +103,8 @@ if __name__ == '__main__':
         help = 'Random seed'
     )
     parser.add_argument('--output_folder', 
-        # required = True,
-        default = '/home/shenm19/prj/df-manuscript/ACIDES/output/'
-    )
+        required = False,
+        default = 'output/')
 
     args = parser.parse_args()
 

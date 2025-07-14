@@ -359,8 +359,6 @@ def load_e2e_items(
 
 if __name__ == '__main__':
     """
-        python -m deepfitness.scripts.train_deep_latent --csv /home/shenm19/prj/deepfitness/s3data/ab.phage.mgp130.aug2023/mgp130_mfilt.csv --genotype_col fv_heavy --round_cols [R0,R1,R2,R3,R4] --project_output_folder outputs/deepfitness_ab.phage.mgp130/ --dataflow string_to_tensor
-
         python -m deepfitness.scripts.train_deep_latent --config deepfitness/options/dryrun_deep_latent.yaml
     """
     # load args from yaml, then update with cli

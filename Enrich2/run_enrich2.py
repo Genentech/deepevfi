@@ -103,7 +103,7 @@ if __name__ == '__main__':
     )
     parser.add_argument('--csv',
         # required = True,
-        default = '/home/shenm19/prj/evfi-manuscript/data/Data-B.csv')
+        default = 'data/Data-B.csv')
     parser.add_argument('--genotype_col', 
         default = 'Genotype'
     )
@@ -116,7 +116,7 @@ if __name__ == '__main__':
     )
     parser.add_argument('--output_folder', 
         # required = True,
-        default = '/home/shenm19/prj/df-manuscript/Enrich2/output/test/'
+        default = 'output/test/'
     )
 
     args = parser.parse_args()

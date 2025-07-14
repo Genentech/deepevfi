@@ -4,7 +4,7 @@ import yaml
 from hackerargs import args
 
 
-CONFIG_DIR = '/home/shenm19/prj/evfi-manuscript/run-benchmarks/gt/filtzero_without_lastround/config_files/'
+CONFIG_DIR = '/evfi-manuscript-public/run-benchmarks/gt/filtzero_without_lastround/config_files/'
 
 NUM_REPLICATES = 5
 METHOD_NAME = 'deep-latent'

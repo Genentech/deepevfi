@@ -46,8 +46,6 @@ if __name__ == '__main__':
         > python -m deepfitness.scripts.check_tracks_overlap
 
         python -m deepfitness.scripts.check_tracks_overlap --csv example/TEAD_subset500.csv --genotype_col HELMnolinker --rounds_before 0,1,2,4,5 --rounds_after 1,2,3,5,6
-
-        python -m deepfitness.scripts.check_tracks_overlap --csv /home/shenm19/prj/deepfitness/datasets/ab.phage.fcrh5/fcrh5_mfilt_4tracks.csv --genotype_col HAA --rounds_before FcRH5_Llama_L958.B1_PBMC,FcRH5_Llama_L958.B2_PBMC,FcRH5_Llama_L909.B1_PBMC,FcRH5_Llama_L909.B2_PBMC,FcRH5_Llama_L958.B1_Rd0,FcRH5_Llama_L958.B2_Rd0,FcRH5_Llama_L909.B1_Rd0,FcRH5_Llama_L909.B2_Rd0,FcRH5_Llama_L958.B1_Rd1,FcRH5_Llama_L958.B2_Rd1,FcRH5_Llama_L909.B1_Rd1,FcRH5_Llama_L909.B2_Rd1 --rounds_after FcRH5_Llama_L958.B1_Rd0,FcRH5_Llama_L958.B2_Rd0,FcRH5_Llama_L909.B1_Rd0,FcRH5_Llama_L909.B2_Rd0,FcRH5_Llama_L958.B1_Rd1,FcRH5_Llama_L958.B2_Rd1,FcRH5_Llama_L909.B1_Rd1,FcRH5_Llama_L909.B2_Rd1,FcRH5_Llama_L958.B1_Rd2,FcRH5_Llama_L958.B2_Rd2,FcRH5_Llama_L909.B1_Rd2,FcRH5_Llama_L909.B2_Rd2
     """
     parser = argparse.ArgumentParser(
         description = """

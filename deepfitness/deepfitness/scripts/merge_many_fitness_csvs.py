@@ -107,8 +107,6 @@ if __name__ == '__main__':
     """
         To run in package, use
         > python -m deepfitness.scripts.merge_many_fitness_csvs
-
-        python -m deepfitness.scripts.merge_many_fitness_csvs --fitness_csvs [/home/shenm19/prj/deepfitness/_datasets/dcp.prelim/simplefitness/hIL4R-L10/simple_jointrounds_evidence.csv,/home/shenm19/prj/deepfitness/_datasets/dcp.prelim/simplefitness/hIL4R-L10/simple_control_evidence.csv] --genotype_col "Peptide" --output_folder /home/shenm19/prj/deepfitness/_datasets/dcp.prelim/simplefitness/hIL4R-L10/test_merge/ 
     """
     parser = argparse.ArgumentParser(
         description = """

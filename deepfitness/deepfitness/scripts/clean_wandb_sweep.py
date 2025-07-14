@@ -129,9 +129,6 @@ def main():
 
 
 if __name__ == '__main__':
-    """
-        python -m deepfitness.scripts.clean_wandb_sweep --sweep efr7qgnb --prj_folder /home/shenm19/prj/deepfitness/outputs/deepfit_fgfr1_path_h --stats [warmup-val_last_round_nll,e2e-val_last_round_nll]
-    """
     parser = argparse.ArgumentParser(
         description = """
             Use this script after running a wandb sweep. This script saves the

@@ -5,10 +5,10 @@ filter_max_frequency_threshold: 0.0
 
 wandb.use: True
 
-csv: '/home/shenm19/prj/evfi-manuscript/datasets/filtzero_without_lastround/Data-D.csv'
+csv: '/evfi-manuscript-public/datasets/filtzero_without_lastround/Data-D.csv'
 genotype_col: 'Genotype'
 round_cols: [Initial_1,r1_1,r2_1,r3_1]
-project_output_folder: '/home/shenm19/prj/evfi-manuscript/run-alltime/gt/out/D/deep_latent/'
+project_output_folder: '/evfi-manuscript-public/run-alltime/gt/out/D/deep_latent/'
 tsngs.skip_filters: True
 
 loss_func: 'dirichlet_multinomial'

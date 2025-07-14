@@ -29,10 +29,6 @@ if __name__ == '__main__':
     """
         To run in package, use
         > python -m deepfitness.scripts.precompute_feature_store
-
-        python -m deepfitness.scripts.precompute_feature_store --csv /home/shenm19/prj/df-manuscript/datasets/tead3/tead3_filt_validsmiles.csv --genotype_col SMILES --dataflow smiles_to_fingerprint
-
-        python -m deepfitness.scripts.precompute_feature_store --csv /home/shenm19/prj/deepfitness/s3data/ab.phage.mgp130.aug2023/mgp130_mfilt.csv --genotype_col fv_heavy --dataflow string_to_tensor --ft.alphabet 'amino acids'
     """
     parser = argparse.ArgumentParser(
         description = """

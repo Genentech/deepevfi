@@ -74,8 +74,6 @@ if __name__ == '__main__':
     """
         To run in package, use
         > python -m deepfitness.scripts.filter_count_table_stream
-
-        python -m deepfitness.scripts.filter_count_table_stream --csv /home/shenm19/prj/deepfitness/_datasets/sparktx/test_10m.csv.tar.gz --genotype_col pattern --round_cols G0,G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11 --output_csv /home/shenm19/prj/deepfitness/_datasets/sparktx/mfilt_test_10m.csv
     """
     parser = argparse.ArgumentParser(
         description = """

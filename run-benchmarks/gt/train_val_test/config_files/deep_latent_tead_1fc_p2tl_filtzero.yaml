@@ -2,10 +2,10 @@ accelerator: 'gpu'
 random_seed: 0
 wandb.use: True
 
-csv: '/home/shenm19/prj/evfi-manuscript/datasets/filtzero_without_2ndtolastround/tead3_filt1consec_present2ndtolast.csv'
+csv: '/evfi-manuscript-public/datasets/filtzero_without_2ndtolastround/tead3_filt1consec_present2ndtolast.csv'
 genotype_col: 'Genotype'
 round_cols: [0,1,2,3,4,5,6]
-project_output_folder: '/home/shenm19/prj/evfi-manuscript/run-benchmarks/gt/filtzero_without_lastround/out/TEAD-1fc-p2tl/deep_latent/'
+project_output_folder: '/evfi-manuscript-public/run-benchmarks/gt/filtzero_without_lastround/out/TEAD-1fc-p2tl/deep_latent/'
 tsngs.skip_filters: False
 
 # 'train_only' or 'train_and_eval'

@@ -5,11 +5,11 @@ filter_max_frequency_threshold: 0.0
 
 wandb.use: True
 
-csv: '/home/shenm19/prj/evfi-manuscript/datasets/filtzero_without_lastround/Data-F.csv'
+csv: '/evfi-manuscript-public/datasets/filtzero_without_lastround/Data-F.csv'
 genotype_col: 'Genotype'
 round_cols: [G0,D1.25,D2.25,D3.25,D4.25]
 steps_per_round: [1.25,1,1,1]
-project_output_folder: '/home/shenm19/prj/evfi-manuscript/run-alltime/gt/out/F/deep_latent/'
+project_output_folder: '/evfi-manuscript-public/run-alltime/gt/out/F/deep_latent/'
 tsngs.skip_filters: True
 tasks.multinomial.validate_args: False
 

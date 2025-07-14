@@ -94,8 +94,6 @@ if __name__ == '__main__':
     """
         To run in package, use
         > python -m deepfitness.scripts.adjust_fitness_off_target
-
-        python -m deepfitness.scripts.adjust_fitness_off_target --joint_fitness_csv /home/shenm19/prj/deepfitness/_datasets/dcp.prelim/simplefitness/hIL4R-L10/simple_jointrounds.csv --off_fitness_csv /home/shenm19/prj/deepfitness/_datasets/dcp.prelim/simplefitness/hIL4R-L10/simple_control.csv --genotype_col "Peptide" --output_csv /home/shenm19/prj/deepfitness/_datasets/dcp.prelim/simplefitness/hIL4R-L10/simplefitness_ontarget.csv --last_joint_round 4 --last_off_round 4C
     """
     parser = argparse.ArgumentParser(
         description = """
