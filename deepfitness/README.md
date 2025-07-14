@@ -28,6 +28,12 @@ mamba install pytorch torchvision torchaudio cudatoolkit=11.7 -c pytorch -c nvid
 mamba install wandb pytorch-lightning pandas scikit-learn pyro-ppl colorcet seaborn rdkit ipykernel boto3 typing_extensions loguru swifter
 ```
 
+The repo also depends on hackerargs:
+
+```Shell
+pip install hackerargs
+```
+
 Finally, to enable imports to work inside this repository, run:
 
 ```Shell
